@@ -15,13 +15,23 @@ test('renders a increment button', ()=>{
 })
 
 
-test('clicking on decrement button should decrement the counter', ()=>{
+test('clicking on Increment button should decrement the counter', ()=>{
   render(<App />);
-  const button = screen.getByText("Subtract")
+  const button = screen.getByText("Add")
   expect(button).toBeInTheDocument()
   const counterTag = screen.getByTestId("counter")
   expect(counterTag).toBeInTheDocument()
-  expect(counterTag.innerHTML === "10").toBeTruthy()
+  expect(counterTag.innerHTML === "0").toBeTruthy()
+  fireEvent.click(button)
+  expect(counterTag.innerHTML === "1").toBeTruthy()
+})
+test('clicking on Decrement button should decrement the counter', ()=>{
+  render(<App />);
+  const button = screen.getByText("subtract")
+  expect(button).toBeInTheDocument()
+  const counterTag = screen.getByTestId("counter")
+  expect(counterTag).toBeInTheDocument()
+  expect(counterTag.innerHTML === "2").toBeTruthy()
   fireEvent.click(button)
   expect(counterTag.innerHTML === "1").toBeTruthy()
 })

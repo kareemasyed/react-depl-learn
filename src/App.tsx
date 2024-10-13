@@ -7,6 +7,9 @@ function App() {
   const [counter, setCounter] = useState(0);
 
   const handleIncrement = () =>{
+    setCounter(val => val + 1)
+  }
+  const handleDecrement = () =>{
     setCounter(val => val -1)
   }
 
@@ -18,7 +21,7 @@ function App() {
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
         <h1 data-testid="counter">{counter}</h1>
-        <button onClick={handleIncrement}>SUBTRACT</button>
+        <button onClick={handleIncrement}></button>
         <a
           className="App-link"
           href="https://reactjs.org"
